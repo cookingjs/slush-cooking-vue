@@ -1,10 +1,10 @@
 {
   "name": "slush-cooking-vue",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A vue project template for cooking.",
   "main": "index.js",
   "scripts": {
-    "prepublish": "npm version patch && git push origin master"
+    "prepublish": "kp"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,9 @@
     "url": "https://github.com/cookingjs/slush-cooking-vue/issues"
   },
   "homepage": "https://github.com/cookingjs/slush-cooking-vue#readme",
+  "peerDependencies": {
+    "kanpai": "*"
+  },
   "dependencies": {
     "gulp": "~3.8.6",
     "gulp-template": "~0.1.1",
