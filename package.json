@@ -4,7 +4,7 @@
   "description": "A vue project template for cooking.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "npm version patch && git push origin master"
   },
   "repository": {
     "type": "git",
