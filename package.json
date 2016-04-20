@@ -1,15 +1,13 @@
 {
   "name": "slush-cooking-vue",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A vue project template for cooking.",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cookingjs/slush-cooking-vue.git"
   },
-  "scripts": {
-
-  },
+  "scripts": {},
   "keywords": [
     "cooking",
     "vue",
