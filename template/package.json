@@ -1,0 +1,14 @@
+{
+  "name": "<%= name %>",
+  "version": "0.1.0",
+  "description": "<%= description %>",
+  "private": true,
+  "scripts": {
+    "dev": "cooking watch",
+    "dist": "cooking build"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
