@@ -1,7 +1,7 @@
-var Vue = require('vue');
-var App = require('src/app');
+import Vue from 'vue';
+import App from './app';
 
 new Vue({ // eslint-disable-line
   el: 'body',
-  components: { App: App }
+  components: { App }
 });

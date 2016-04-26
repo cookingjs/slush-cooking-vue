@@ -19,9 +19,6 @@
     "url": "https://github.com/cookingjs/slush-cooking-vue/issues"
   },
   "homepage": "https://github.com/cookingjs/slush-cooking-vue#readme",
-  "peerDependencies": {
-    "kanpai": "*"
-  },
   "dependencies": {
     "gulp": "~3.8.6",
     "gulp-template": "~0.1.1",

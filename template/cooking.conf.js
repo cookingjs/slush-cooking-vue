@@ -1,16 +1,15 @@
-var getConfig = require('cooking').getConfig
+var getConfig = require('cooking')
 
 var config = getConfig({
   in: 'src/entry.js',
-  out: 'dist', // path
-  publicPath: '',
-
-  html: {
-    'index.html': 'src/index.template.html'
-  },
+  dist: 'dist',
+  assetsPath: 'static',
+  urlLoaderLimit: 10000,
+  template: 'src/index.template.html',
 
   // dev
   devServer: {
+    publicPath: '/',
     enable: false,
     port: 8080,
     historyApiFallback: true,
@@ -20,14 +19,17 @@ var config = getConfig({
   },
 
 
-  // dist
+  // build
   clear: true,
   hash: true,
   sourceMap: true,
+  publicPath: '/dist',
 
   // chunk: 'vendor',
 
-  extractCSS: 'stlye.css', // or boolean
+  extractCSS: '[name].[contenthash:7].css',
+
+  extends: ['vue']
 })
 
 module.exports = config

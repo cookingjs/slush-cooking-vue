@@ -1,9 +1,10 @@
 <template>
-  <h1>Start cooking!</h1>
+  <h1><%= name %></h1>
+  <p><%= description %></p>
 </template>
 
 <script>
-  module.exports = {
+  export default {
     name: 'app'
   };
 </script>
