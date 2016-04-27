@@ -1,35 +1,29 @@
-var getConfig = require('cooking')
+var cooking = require('cooking')
 
-var config = getConfig({
-  in: 'src/entry.js',
-  dist: 'dist',
-  assetsPath: 'static',
-  urlLoaderLimit: 10000,
-  template: 'src/index.template.html',
-
-  // dev
-  devServer: {
-    publicPath: '/',
-    enable: false,
-    port: 8080,
-    historyApiFallback: true,
-    noInfo: true,
-    quiet: false,
-    lazy: false
+cooking.set({
+  entry: './src/entry.js',
+  dist: './dist',
+  template: {
+    'index.html': 'src/index.template.html'
   },
 
+  // development
+  devServer: {
+    publicPath: '/', // 会覆盖 output.publicPath
+    enable: false, // 是否启用
+    port: 8080,
+    hot: true
+  },
 
-  // build
-  clear: true,
-  hash: true,
-  sourceMap: true,
-  publicPath: '/dist',
+  // production
+  clean: true, // 是否每次 build 都清理
+  hash: true, // build 的文件是否带 hash
+  sourceMap: true, // 是否带 map
+  publicPath: '/dist/',
+  urlLoaderLimit: 10000,
+  assetsPath: 'static',
 
-  // chunk: 'vendor',
-
-  extractCSS: '[name].[contenthash:7].css',
-
-  extends: ['vue']
+  extractCSS: '[name].[contenthash:7].css'
 })
 
-module.exports = config
+module.exports = cooking.resolve()
