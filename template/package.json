@@ -14,7 +14,8 @@
   "homepage": "<%= github %>#readme",
   "bugs": {
     "url": "<%= github %>/issues"
-  },<% } %>
+  },<% } %><% if (author) { %>
+  "author": "<%= author %>",<% } %>
   "license": "<%= license %>",
   "dependencies": {
   },
