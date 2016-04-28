@@ -44,6 +44,8 @@ gulp.task('default', function (done) {
     }
   ],
   function (answers) {
+    answers.github = answers.github.replace(/\/$/, '')
+
     if (!answers.moveon) {
       return done()
     }
