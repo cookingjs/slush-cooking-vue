@@ -4,6 +4,7 @@
 
 # dependency
 - [cooking-vue](https://github.com/cookingjs/cooking-vue/)
+- [cooking-lint](https://github.com/cookingjs/cooking-lint/)
 
 # Quick Start
 ```shell
