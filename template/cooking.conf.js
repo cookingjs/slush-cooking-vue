@@ -1,4 +1,5 @@
 var cooking = require('cooking')
+var path = require('path')
 
 cooking.set({
   entry: './src/entry.js',
@@ -25,5 +26,10 @@ cooking.set({
 
   extends: ['vue', 'lint']
 })
+
+cooking.add('resolve.alias', {
+  'src': path.join(__dirname, 'src')
+})
+
 
 module.exports = cooking.resolve()
