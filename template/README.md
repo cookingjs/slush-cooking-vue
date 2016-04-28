@@ -11,3 +11,6 @@ make dev
 ```
 make dist
 ```
+
+# License
+<%= license %>

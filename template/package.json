@@ -1,12 +1,21 @@
 {
   "name": "<%= name %>",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "<%= description %>",
   "private": true,
   "scripts": {
     "dev": "cooking watch",
     "dist": "cooking build"
+  },<% if (github) { %>
+  "repository": {
+    "type": "git",
+    "url": "git+<%= github %>.git"
   },
+  "homepage": "<%= github %>#readme",
+  "bugs": {
+    "url": "<%= github %>/issues"
+  },<% } %>
+  "license": "<%= license %>",
   "dependencies": {
   },
   "devDependencies": {

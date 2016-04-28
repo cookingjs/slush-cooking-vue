@@ -1,8 +1,9 @@
-var gulp = require('gulp'),
-    install = require('gulp-install'),
-    conflict = require('gulp-conflict'),
-    template = require('gulp-template'),
-    inquirer = require('inquirer')
+var gulp = require('gulp')
+var install = require('gulp-install')
+var conflict = require('gulp-conflict')
+var template = require('gulp-template')
+var inquirer = require('inquirer')
+var cookingConfig = require('cooking-config')
 
 gulp.task('default', function (done) {
   inquirer.prompt([
@@ -17,6 +18,24 @@ gulp.task('default', function (done) {
       name: 'description',
       message: 'Give your app a description',
       default: 'A vue project.'
+    },
+    {
+      type: 'input',
+      name: 'github',
+      message: 'git repository',
+      default: cookingConfig.github
+    },
+    {
+      type: 'input',
+      name: 'author',
+      message: 'author',
+      default: cookingConfig.author
+    },
+    {
+      type: 'input',
+      name: 'license',
+      message: 'license',
+      default: 'ISC'
     },
     {
       type: 'confirm',
