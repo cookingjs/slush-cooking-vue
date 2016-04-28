@@ -3,9 +3,7 @@ var cooking = require('cooking')
 cooking.set({
   entry: './src/entry.js',
   dist: './dist',
-  template: {
-    'index.html': 'src/index.template.html'
-  },
+  template: 'src/index.template.html',
 
   // development
   devServer: {
@@ -16,14 +14,16 @@ cooking.set({
   },
 
   // production
-  clean: true, // 是否每次 build 都清理
-  hash: true, // build 的文件是否带 hash
-  sourceMap: true, // 是否带 map
-  publicPath: '/dist/',
-  urlLoaderLimit: 10000,
+  clean: true,
+  hash: true,
+  sourceMap: true,
+  publicPath: '/dist',
   assetsPath: 'static',
+  urlLoaderLimit: 10000,
 
-  extractCSS: '[name].[contenthash:7].css'
+  extractCSS: '[name].[contenthash:7].css',
+
+  extends: ['vue', 'lint']
 })
 
 module.exports = cooking.resolve()
