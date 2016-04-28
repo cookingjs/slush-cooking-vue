@@ -1,3 +1,4 @@
 {
-  "extends": "elemefe"
+  "plugins": ["vue"],
+  "extends": ["elemefe"]
 }
