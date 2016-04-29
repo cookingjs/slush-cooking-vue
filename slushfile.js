@@ -49,7 +49,7 @@ gulp.task('default', function (done) {
     if (!answers.moveon) {
       return done()
     }
-    gulp.src(__dirname + '/template/**')
+    gulp.src(__dirname + '/template/**', { dot: true })
       .pipe(template(answers))
       .pipe(conflict('./'))
       .pipe(gulp.dest('./'))
@@ -62,10 +62,10 @@ gulp.task('default', function (done) {
 })
 
 function getNameProposal () {
-  var path = require('path');
+  var path = require('path')
   try {
-    return require(path.join(process.cwd(), 'package.json')).name;
+    return require(path.join(process.cwd(), 'package.json')).name
   } catch (e) {
-    return path.basename(process.cwd());
+    return path.basename(process.cwd())
   }
 }
