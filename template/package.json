@@ -2,7 +2,7 @@
   "name": "<%= name %>",
   "version": "0.0.0",
   "description": "<%= description %>",
-  "private": true,
+  "private": <%= private %>,
   "keywords": [
   ],
   "scripts": {
