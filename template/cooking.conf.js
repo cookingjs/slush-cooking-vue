@@ -2,6 +2,7 @@ var cooking = require('cooking');
 var path = require('path');
 
 cooking.set({
+  use: 'vue',
   entry: './src/entry.js',
   dist: './dist',
   template: 'src/index.template.html',
