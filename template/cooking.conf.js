@@ -1,5 +1,5 @@
-var cooking = require('cooking')
-var path = require('path')
+var cooking = require('cooking');
+var path = require('path');
 
 cooking.set({
   entry: './src/entry.js',
@@ -16,17 +16,17 @@ cooking.set({
   clean: true,
   hash: true,
   sourceMap: true,
-  publicPath: '/dist',
+  publicPath: '/dist/',
   assetsPath: 'static',
   urlLoaderLimit: 10000,
 
   extractCSS: '[name].[contenthash:7].css',
 
   extends: ['vue', 'lint'<% if( csstype) { %>, '<%= csstype %>'<% } %>]
-})
+});
 
 cooking.add('resolve.alias', {
   'src': path.join(__dirname, 'src')
-})
+});
 
-module.exports = cooking.resolve()
+module.exports = cooking.resolve();
