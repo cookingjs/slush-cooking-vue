@@ -5,3 +5,6 @@ dev:
 
 dist:
 	@npm run dist
+
+deploy:
+	@npm run deploy

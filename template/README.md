@@ -1,16 +1,16 @@
 # <%= name %>
 > <%= description %>
 
-# Development
+## Development
 
 ```shell
 make dev
 ```
 
-# Production
+## Production
 ```
 make dist
 ```
 
-# License
+## License
 <%= license %>

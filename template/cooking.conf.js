@@ -10,11 +10,11 @@ cooking.set({
   dist: './dist',
   template: './src/index.tpl',
 
-  devServer: {
+  devServer: {<% if (devServer) { %>
     port: 8080,
-    publicPath: '/',
-    extractCSS: true<% if (!devServer) { %>,
-    enable: false<% } %>
+    publicPath: '/',<% } else { %>
+    enable: false,<% } %>
+    extractCSS: true
   },
 
   // production

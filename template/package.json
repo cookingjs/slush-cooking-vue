@@ -7,7 +7,8 @@
   ],
   "scripts": {
     "dev": "cooking watch",
-    "dist": "cooking build"
+    "dist": "cooking build -p",
+    "deploy": "cooking build --no-color"
   },<% if (github) { %>
   "repository": {
     "type": "git",
