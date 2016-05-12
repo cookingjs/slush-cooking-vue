@@ -39,6 +39,7 @@ gulp.task('default', function (done) {
       default: '',
       choices: [
         {name: 'Only CSS', value: ''},
+        {name: 'Salad', value: 'saladcss'},
         {name: 'PostCSS', value: 'postcss'},
         {name: 'Sass', value: 'sass'}
       ]

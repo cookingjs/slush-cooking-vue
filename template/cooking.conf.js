@@ -1,28 +1,31 @@
-var cooking = require('cooking');
 var path = require('path');
+var cooking = require('cooking');
 
 cooking.set({
   use: 'vue',
-  entry: './src/entry.js',
-  dist: './dist',
-  template: 'src/index.template.html',
-  <% if (devServer) { %>
-  // development
-  devServer: {
-    host: 8080,
-    publicPath: '/'
+  entry: {
+    app: './src/main.js',
+    vendor: ['vue']
   },
-  <% } %>
+  dist: './dist',
+  template: './src/index.tpl',
+
+  devServer: {
+    port: 8080,
+    publicPath: '/',
+    extractCSS: true<% if (!devServer) { %>,
+    enable: false<% } %>
+  },
+
   // production
   clean: true,
   hash: true,
   sourceMap: true,
+  chunk: 'vendor',
   publicPath: '/dist/',
   assetsPath: 'static',
   urlLoaderLimit: 10000,
-
   extractCSS: '[name].[contenthash:7].css',
-
   extends: ['vue', 'lint'<% if( csstype) { %>, '<%= csstype %>'<% } %>]
 });
 
