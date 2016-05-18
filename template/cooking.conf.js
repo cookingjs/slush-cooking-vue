@@ -2,7 +2,6 @@ var path = require('path');
 var cooking = require('cooking');
 
 cooking.set({
-  use: 'vue',
   entry: {
     app: './src/main.js',
     vendor: ['vue']
