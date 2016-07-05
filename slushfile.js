@@ -5,6 +5,20 @@ var rename = require('gulp-rename')
 var template = require('gulp-template')
 var inquirer = require('inquirer')
 var cookingConfig = require('cooking-config')
+var version = require('cooking').version
+
+version = version ? Number(version.split('.')[0]) : 0
+
+var CssChoices = [
+  {name: 'Only CSS', value: ''},
+  {name: 'Salad', value: 'saladcss'},
+  {name: 'Sass', value: 'sass'},
+  {name: 'Less', value: 'less'}
+]
+
+if (version < 1) {
+  CssChoices.push({name: 'PostCSS', value: 'postcss'})
+}
 
 gulp.task('default', function (done) {
   inquirer.prompt([
@@ -37,12 +51,7 @@ gulp.task('default', function (done) {
       name: 'csstype',
       message: 'What CSS preprocessor do you want to use?',
       default: '',
-      choices: [
-        {name: 'Only CSS', value: ''},
-        {name: 'Salad', value: 'saladcss'},
-        {name: 'PostCSS', value: 'postcss'},
-        {name: 'Sass', value: 'sass'}
-      ]
+      choices: CssChoices
     },
     {
       type: 'input',
