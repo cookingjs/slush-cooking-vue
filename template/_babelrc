@@ -1,5 +1,5 @@
 {
-  "presets": [<% if (nextCooking) { %>"es2015"<% } else { %>["es2015", { "modules": false }]<% } %>, "stage-0", "stage-2"],
+  "presets": [<% if (!nextCooking) { %>"es2015"<% } else { %>["es2015", { "modules": false }]<% } %>, "stage-0", "stage-2"],
   "plugins": ["transform-runtime"],
   "comments": false
 }
