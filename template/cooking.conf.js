@@ -40,11 +40,14 @@ cooking.set({
       chunks: ['vendor']
     }
   ],
+  <% if (nextCooking) { %>postcss: [
+    // require('...')
+  ],<% } %>
   publicPath: '/dist/',
   assetsPath: 'static',
   urlLoaderLimit: 10000,
   extractCSS: '[name].[contenthash:7].css',
-  extends: ['vue', 'lint'<% if( csstype) { %>, '<%= csstype %>'<% } %>]
+  extends: ['vue', 'lint'<% if( csstype) { %>, '<%= csstype %>'<% } %>, <% if (nextCooking) { %>'autoprefixer'<% } %>]
 });
 
 cooking.add('resolve.alias', {

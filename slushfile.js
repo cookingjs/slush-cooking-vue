@@ -85,6 +85,9 @@ gulp.task('default', function (done) {
     if (!answers.moveon) {
       return done()
     }
+
+    answers.nextCooking = version > 0
+
     gulp.src(__dirname + '/template/**', { dot: true })
       .pipe(template(answers))
       .pipe(rename(function (file) {
