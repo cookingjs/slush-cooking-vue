@@ -47,7 +47,7 @@ cooking.set({
   assetsPath: 'static',
   urlLoaderLimit: 10000,
   extractCSS: '[name].[contenthash:7].css',
-  extends: ['vue', 'lint'<% if( csstype) { %>, '<%= csstype %>'<% } %>, <% if (nextCooking) { %>'autoprefixer'<% } %>]
+  extends: ['vue', 'lint'<% if( csstype) { %>, '<%= csstype %>'<% } %><% if (nextCooking) { %>, 'autoprefixer'<% } %>]
 });
 
 cooking.add('resolve.alias', {
