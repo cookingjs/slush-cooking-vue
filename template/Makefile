@@ -1,4 +1,4 @@
-.PHONY: dist
+.PHONY: dist test
 
 dev:
 	@npm run dev
@@ -8,3 +8,6 @@ dist:
 
 deploy:
 	@npm run deploy
+
+test:
+	@npm test

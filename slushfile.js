@@ -54,6 +54,12 @@ gulp.task('default', function (done) {
       choices: CssChoices
     },
     {
+      type: 'confirm',
+      name: 'unit',
+      message: 'Setup unit tests with Karma + Mocha?',
+      default: true
+    },
+    {
       type: 'input',
       name: 'github',
       message: 'git repository',
@@ -88,7 +94,15 @@ gulp.task('default', function (done) {
 
     answers.nextCooking = version > 0
 
-    gulp.src(__dirname + '/template/**', { dot: true })
+    var filesPath = [__dirname + '/template/**']
+    if (!answers.unit) {
+      filesPath = filesPath.concat([
+        '!' + __dirname + '/template/karma.conf.js',
+        '!' + __dirname + '/template/test/**'
+      ])
+    }
+
+    gulp.src(filesPath, { dot: true })
       .pipe(template(answers))
       .pipe(rename(function (file) {
         if (file.basename[0] === '_') {

@@ -18,5 +18,6 @@
   "bugs": {
     "url": "https://github.com/cookingjs/slush-cooking-vue/issues"
   },
-  "homepage": "https://github.com/cookingjs/slush-cooking-vue#readme"
+  "homepage": "https://github.com/cookingjs/slush-cooking-vue#readme",
+  "dependencies": {}
 }
