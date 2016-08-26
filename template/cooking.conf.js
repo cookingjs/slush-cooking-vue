@@ -10,7 +10,7 @@ cooking.set({
 
   devServer: {<% if (devServer) { %>
     port: 8080,
-    publicPath: '/'<% } else { %>,
+    publicPath: '/'<% } else { %>
     enable: false,
     extractCSS: true<% } %>
   },
