@@ -5,7 +5,10 @@ var rename = require('gulp-rename')
 var template = require('gulp-template')
 var inquirer = require('inquirer')
 var cookingConfig = require('cooking-config')
-var isNextWebpack = require('cooking/util/check').isNextWebpack
+var isNextWebpack = false
+try {
+  isNextWebpack = require('cooking/util/check').isNextWebpack
+} catch(_) {}
 
 var CssChoices = [
   {name: 'Only CSS', value: ''},
