@@ -5,9 +5,7 @@ var rename = require('gulp-rename')
 var template = require('gulp-template')
 var inquirer = require('inquirer')
 var cookingConfig = require('cooking-config')
-var version = require('cooking').version
-
-version = version ? Number(version.split('.')[0]) : 0
+var isNextWebpack = require('cooking/util/check').isNextWebpack
 
 var CssChoices = [
   {name: 'Only CSS', value: ''},
@@ -16,7 +14,7 @@ var CssChoices = [
   {name: 'Less', value: 'less'}
 ]
 
-if (version < 1) {
+if (!isNextWebpack) {
   CssChoices.push({name: 'PostCSS', value: 'postcss'})
 }
 
@@ -92,7 +90,7 @@ gulp.task('default', function (done) {
       return done()
     }
 
-    answers.nextCooking = version > 0
+    answers.isNextWebpack = isNextWebpack
 
     var filesPath = [__dirname + '/template/**']
     if (!answers.unit) {
