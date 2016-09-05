@@ -19,6 +19,7 @@ cooking.set({
   clean: true,
   hash: true,
   sourceMap: true,
+  minimize: true,
   chunk: [
     {
       name: 'vendor',
