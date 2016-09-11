@@ -2,6 +2,6 @@ import Vue from 'vue';
 import App from './app';
 
 new Vue({ // eslint-disable-line
-  el: 'body',
-  components: { App }
+  el: '#app',
+  <% if (!vueVersion) { %>components: { App }<% } else { %>render: h => h(App)<% } %>
 });

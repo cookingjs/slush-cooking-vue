@@ -3,13 +3,14 @@
 
 ## Development
 
-```shell
-make dev
+```shell<% if (!cooking) { %>
+npm i cooking -g<% } %>
+npm run dev
 ```
 
 ## Production
 ```
-make dist
+npm run dist
 ```
 
 ## License

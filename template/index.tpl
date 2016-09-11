@@ -6,7 +6,9 @@
     <title><%= name %></title>
   </head>
   <body>
-    <app></app>
+    <div id="app"><% if (!vueVersion) { %>
+      <app></app>
+    <% } %></div>
     <!-- built files will be auto injected -->
   </body>
 </html>

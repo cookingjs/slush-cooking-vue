@@ -5,21 +5,6 @@ var rename = require('gulp-rename')
 var template = require('gulp-template')
 var inquirer = require('inquirer')
 var cookingConfig = require('cooking-config')
-var isNextWebpack = false
-try {
-  isNextWebpack = require('cooking/util/check').isNextWebpack
-} catch(_) {}
-
-var CssChoices = [
-  {name: 'Only CSS', value: ''},
-  {name: 'Salad', value: 'saladcss'},
-  {name: 'Sass', value: 'sass'},
-  {name: 'Less', value: 'less'}
-]
-
-if (!isNextWebpack) {
-  CssChoices.push({name: 'PostCSS', value: 'postcss'})
-}
 
 gulp.task('default', function (done) {
   inquirer.prompt([
@@ -42,6 +27,27 @@ gulp.task('default', function (done) {
       default: true
     },
     {
+      type: 'list',
+      name: 'vueVersion',
+      message: 'What Vue version do you what?',
+      default: 2,
+      choices: [
+        {name: 'Vue 2', value: 2},
+        {name: 'Vue 1', value: ''}
+      ]
+    },
+    {
+      type: 'list',
+      name: 'cooking',
+      message: 'What way use cooking do you want?',
+      default: '',
+      choices: [
+        {name: 'Global cooking', value: ''},
+        {name: 'Local cooking (and use webpack 1)', value: '1'},
+        {name: 'Local cooking (and use webpack 2)', value: 'beta'}
+      ]
+    },
+    {
       type: 'confirm',
       name: 'devServer',
       message: 'Need dev server?',
@@ -52,7 +58,12 @@ gulp.task('default', function (done) {
       name: 'csstype',
       message: 'What CSS preprocessor do you want to use?',
       default: '',
-      choices: CssChoices
+      choices: [
+        {name: 'Only CSS', value: ''},
+        {name: 'Salad', value: 'saladcss'},
+        {name: 'Sass', value: 'sass'},
+        {name: 'Less', value: 'less'}
+      ]
     },
     {
       type: 'confirm',
@@ -93,12 +104,11 @@ gulp.task('default', function (done) {
       return done()
     }
 
-    answers.isNextWebpack = isNextWebpack
-
     var filesPath = [__dirname + '/template/**']
     if (!answers.unit) {
       filesPath = filesPath.concat([
         '!' + __dirname + '/template/karma.conf.js',
+        '!' + __dirname + '/template/test',
         '!' + __dirname + '/template/test/**'
       ])
     }
