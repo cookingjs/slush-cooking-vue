@@ -6,7 +6,7 @@
   "keywords": [
   ],
   "scripts": {
-    "dev": "cooking watch",
+    "dev": "cooking watch -p",
     "dist": "cooking build -p",
     "deploy": "cooking build --no-color"<% if (unit) { %>,
     "test": "cooking test karma start --single-run"<% } %>
