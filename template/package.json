@@ -22,7 +22,8 @@
   "author": "<%= author %>",<% } %>
   "license": "<%= license %>",
   "dependencies": {
-    "vue": <% if (!vueVersion) { %>"^1.0.0"<% } else {%>"^2.0.0-rc"<% } %>
+    "vue": <% if (!vueVersion) { %>"^1.0.0"<% } else {%>"^2.0.0-rc"<% } %>,
+    "babel-polyfill": "*"
   },
   "devDependencies": {
     "cooking-vue<%= vueVersion %>": "*"<% if (js) { %>,
