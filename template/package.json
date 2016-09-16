@@ -25,7 +25,8 @@
     "vue": <% if (!vueVersion) { %>"^1.0.0"<% } else {%>"^2.0.0-rc"<% } %>
   },
   "devDependencies": {
-    "vue-loader": <% if (!vueVersion) { %>"^8.0.0"<% } else {%>"^9.0.0"<% } %><% if (cooking) { %>,
+    "cooking-vue<%= vueVersion %>": "*"<% if (js) { %>,
+    "cooking-<%= js %>": "*"<% } %><% if (cooking) { %>,
     "cooking": "^1.0.0-rc",
     "cooking-vue<%= vueVersion %>": "*",
     "cooking-lint": "*",<% if (csstype) { %>

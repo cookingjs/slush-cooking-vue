@@ -38,11 +38,21 @@ gulp.task('default', function (done) {
     },
     {
       type: 'list',
+      name: 'js',
+      message: 'What ES2015+ compiler do you what to use?',
+      default: '',
+      choices: [
+        {name: 'bable (preset-es2015, preset-stage-0, perset-stage-2, plugin-transform-runtime)', value: ''},
+        {name: 'bublé (only use wepback 2)', value: 'buble'}
+      ]
+    },
+    {
+      type: 'list',
       name: 'cooking',
       message: 'What way use cooking do you want?',
       default: '',
       choices: [
-        {name: 'Global cooking', value: ''},
+        {name: 'Global cooking (webpack 2)', value: ''},
         {name: 'Local cooking (and use webpack 1)', value: '1'},
         {name: 'Local cooking (and use webpack 2)', value: 'beta'}
       ]
@@ -110,6 +120,12 @@ gulp.task('default', function (done) {
         '!' + __dirname + '/template/karma.conf.js',
         '!' + __dirname + '/template/test',
         '!' + __dirname + '/template/test/**'
+      ])
+    }
+
+    if (answers.js) {
+      filesPath = filesPath.concat([
+        '!' + __dirname + '/template/_babelrc'
       ])
     }
 
