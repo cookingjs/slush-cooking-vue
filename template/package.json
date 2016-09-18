@@ -28,7 +28,7 @@
   "devDependencies": {
     "cooking-vue<%= vueVersion %>": "*"<% if (js) { %>,
     "cooking-<%= js %>": "*"<% } %><% if (cooking) { %>,
-    "cooking": "^1.0.0-rc",
+    "cooking": "^1.0.0",
     "cooking-vue<%= vueVersion %>": "*",
     "cooking-lint": "*",<% if (csstype) { %>
     "cooking-<%= csstype %>": "*",<% } %>
