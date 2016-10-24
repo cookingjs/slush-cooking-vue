@@ -4,7 +4,7 @@
 ## Development
 
 ```shell<% if (!cooking) { %>
-npm i cooking -g<% } %>
+npm i cooking-cli -g<% } %>
 npm run dev
 ```
 
