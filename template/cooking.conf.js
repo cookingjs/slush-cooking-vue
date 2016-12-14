@@ -31,7 +31,7 @@ cooking.set({
   alias: {
     'src': path.join(__dirname, 'src')
   },
-  extends: ['vue<%= vueVersion %>'<% if (js) { %>, '<%= js %>'<% } %>, 'lint'<% if (csstype) { %>, '<%= csstype %>'<% } %><% if (csstype != 'saladcss') { %>, 'autoprefixer'<% } %>]
+  extends: ['vue<%= vueVersion %>'<% if (js) { %>, '<%= js %>'<% } %>, 'lint'<% if (csstype) { %>, '<%= csstype %>'<% } %>]
 });
 
 module.exports = cooking.resolve();

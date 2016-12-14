@@ -26,19 +26,18 @@
     "babel-polyfill": "*"
   },
   "devDependencies": {
-    "cooking-vue<%= vueVersion %>": "*"<% if (js) { %>,
-    "cooking-<%= js %>": "*"<% } %><% if (cooking) { %>,
+    "cooking-vue<%= vueVersion %>": "*"<% if (cooking) { %>,
     "cooking": "^1.0.0",
     "cooking-vue<%= vueVersion %>": "*",
     "cooking-lint": "*",<% if (csstype) { %>
     "cooking-<%= csstype %>": "*",<% } %>
-    "cooking-autoprefixer": "*",
+    "cooking-autoprefixer": "*",<% if (js !== 'buble') { %>
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
     "babel-plugin-transform-runtime": "^6.0.0",
     "babel-preset-es2015": "^6.0.0",
     "babel-preset-stage-0": "^6.0.0",
-    "babel-preset-stage-2": "^6.0.0",
+    "babel-preset-stage-2": "^6.0.0",<% } %>
     "css-loader": "^0.24.0",
     "extract-text-webpack-plugin": <% if (cooking == 1) { %>"^1.0.0"<% } else {%>"^2.0.0-beta"<% } %>,
     "file-loader": "^0.9.0",

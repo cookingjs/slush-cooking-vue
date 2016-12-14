@@ -107,7 +107,7 @@ gulp.task('default', function (done) {
   ],
   function (answers) {
     if (answers.github) {
-      answers.github = answers.github.replace(/\/$/, '') + '/' + answers.name
+      answers.github = answers.github === cookingConfig.github ? answers.github.replace(/\/$/, '') + '/' + answers.name : answers.github
     }
 
     if (!answers.moveon) {

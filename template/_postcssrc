@@ -1,0 +1,5 @@
+{
+  "plugins": {<% if (csstype != 'saladcss') { %>
+    "autoprefixer"<% } else {%>"postcss-salad"<% } %>: {}
+  }
+}
