@@ -1,6 +1,6 @@
 {
   "name": "slush-cooking-vue",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "A vue project template for cooking.",
   "main": "index.js",
   "repository": {
