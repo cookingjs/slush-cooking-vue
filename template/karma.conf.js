@@ -15,31 +15,11 @@ delete webpackConfig.plugins;
 
 webpackConfig = merge(webpackConfig, {
   devtool: '#inline-source-map',
-  vue: {
-    loaders: {
-      js: 'isparta'
-    }
-  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': JSON.stringify('testing')
     })
   ]
-});
-
-// make sure isparta loader is applied before eslint
-webpackConfig.module.preLoaders = webpackConfig.module.preLoaders || [];
-webpackConfig.module.preLoaders.unshift({
-  test: /\.js$/,
-  loader: 'isparta',
-  include: path.resolve(projectRoot, 'src')
-});
-
-webpackConfig.module.loaders.some(function (loader, i) {
-  if (loader.loader === 'babel') {
-    loader.include = path.resolve(projectRoot, 'test');
-    return true;
-  }
 });
 
 module.exports = function (config) {
