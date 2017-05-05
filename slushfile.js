@@ -42,7 +42,7 @@ gulp.task('default', function (done) {
       message: 'Which ES2015+ compiler do you want to use?',
       default: '',
       choices: [
-        {name: 'bable (preset-es2015, preset-stage-0, perset-stage-2, plugin-transform-runtime)', value: ''},
+        {name: 'babel (preset-es2015, preset-stage-0, perset-stage-2, plugin-transform-runtime)', value: ''},
         {name: 'bublé (only use wepback 2)', value: 'buble'}
       ]
     },
